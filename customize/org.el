@@ -1,3 +1,5 @@
+
+;; Lots of customizations on base org-package
 (use-package org
   :ensure t
   :init
@@ -100,3 +102,39 @@
    ("\C-ca" . 'org-agenda)
    ("\C-cc" . 'org-capture)
    ))
+
+;; Define recurring tasks using shortcuts in the entry
+(use-package org-recur
+  :hook ((org-mode . org-recur-mode)
+         (org-agenda-mode . org-recur-agenda-mode))
+  :ensure t
+  :config
+  (setq org-recur-finish-done t
+        org-recur-finish-archive t)
+  ;; rebind 'd' key in org-agenda (default: org-agenda-day-view)
+  (define-key org-recur-agenda-mode-map (kbd "d") 'org-recur-finish)
+  (define-key org-recur-agenda-mode-map (kbd "C-c d") 'org-recur-finish)
+  :bind* ("C-c d" . 'org-recur-finish))
+
+;; Show org-file as slides
+(use-package org-tree-slide
+  :ensure t
+  :bind*
+  (("<C-s-left>" . 'org-tree-slide-move-previous-tree)
+   ("<C-s-right>" . 'org-tree-slide-move-next-tree)))
+
+;; Note taking extension to org-mode. Can be used with files that
+;; emacs can load in its window.
+(use-package org-noter
+  :ensure t
+  :config (setq org-noter-auto-save-last-location t))
+
+;; Use special bullet icons instead of the default '*'
+(use-package org-bullets
+  :ensure t
+  :init
+  (add-hook 'org-mode-hook 'org-bullets-mode)
+  )
+
+;; Use the default "..." ellipsis
+(setq org-ellipsis nil)
