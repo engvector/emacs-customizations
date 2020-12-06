@@ -29,6 +29,9 @@
    (setq gnutls-verify-error t)
    (setq gnutls-trustfiles (list trustfile)))
 
+;; Required nowadays to avoid connection errors with ELPA/MELPA
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 ;; Setup package URLs
 (defvar gnu '("gnu" . "https://elpa.gnu.org/packages/"))
 (defvar melpa '("melpa" . "https://melpa.org/packages/"))
