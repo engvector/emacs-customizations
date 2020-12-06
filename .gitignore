@@ -13,3 +13,6 @@
 
 # Undo-tree save-files
 *.~undo-tree
+
+# Spotlight index
+.DS_Store
