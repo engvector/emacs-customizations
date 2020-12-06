@@ -1,13 +1,26 @@
+;;--------------------------------------
 ;; This file loads specific emacs configuration/customization files.
+;;--------------------------------------
 
-;; Use HTTPS for package installation
-(load-file "./.emacs.d/secure-pkg-source.el")
+;; Helper function. Accepts a list of files and loads them using a base path
+(defun load-files (base-path files)
+  (mapcar (lambda (file) (load-file (concat base-path file)))
+	  files))
 
-;; Configure global settings
-(load-file "./.emacs.d/global-settings.el")
+;; The base path from where all customization files should be loaded
+(setq settings-root-path "~/.emacs.d/customize/")
+(setq code-test-root-path "./customize/")
 
-;; Global keyboard shortcuts
-(load-file "./.emacs.d/global-keyboard-shortcuts.el")
+;; The files list
+(setq files-list '(
+		   ;; Basic customizations
+		   "secure-pkg-source.el" ;; https for package installation
+		   "global-settings.el"
+		   "global-keyboard-shortcuts.el"
+		   ))
 
-;; Remaining configuration requires the 'use-package' package.
+;; Certain customizations install packages using "use-package"
 (package-install 'use-package)
+
+;; Load all customizations
+(load-files code-test-root-path files-list)
