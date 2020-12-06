@@ -22,6 +22,13 @@
 		   "window-mgmt.el"
 		   "completion.el"
 		   "editing.el"
+
+		   ;; Language specific customizations
+		   "cpp.el"
+		   "shell.el"
+		   "markdown.el"
+		   "csharp.el"
+		   "org.el"
 		   ))
 
 ;; Certain customizations install packages using "use-package"
