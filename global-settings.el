@@ -42,6 +42,3 @@
 (defun my-bell-function ())
 (setq ring-bell-function 'my-bell-function)
 (setq visible-bell t)
-
-;; No more accidental minimizing
-(global-unset-key "\C-z")
