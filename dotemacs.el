@@ -17,6 +17,11 @@
 		   "secure-pkg-source.el" ;; https for package installation
 		   "global-settings.el"
 		   "global-keyboard-shortcuts.el"
+
+		   ;; Customzations for all modes
+		   "window-mgmt.el"
+		   "completion.el"
+		   "editing.el"
 		   ))
 
 ;; Certain customizations install packages using "use-package"
