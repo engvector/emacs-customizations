@@ -1,4 +1,3 @@
-
 ;; Lots of customizations on base org-package
 (use-package org
   :ensure t
@@ -47,7 +46,6 @@
 	(setq org-agenda-files (remove nil org-agenda-files))
 	)))
   (add-hook 'org-mode-hook 'org-mode-file-hook)
-;;  (add-hook 'org-mode-hook 'variable-pitch-mode)
 
   ;; Log all reschedules
   (setq org-log-reschedule 'time)
@@ -85,7 +83,8 @@
    'org-babel-after-execute-hook
    'org-display-inline-images 'append)
   (org-display-inline-images)
-
+  (setq org-startup-with-inline-images t)
+  
   (defadvice org-update-refile-targets (around org-refile)
     (progn
       (ivy-mode t)
@@ -102,6 +101,10 @@
    ("\C-ca" . 'org-agenda)
    ("\C-cc" . 'org-capture)
    ))
+
+(require 'org)
+(require 'ob-tangle)
+(require 'org-tempo)
 
 ;; Define recurring tasks using shortcuts in the entry
 (use-package org-recur
