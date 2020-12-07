@@ -26,6 +26,7 @@
 		   "git.el"
 
 		   ;; Language specific customizations
+		   "ansible.el"
 		   "cpp.el"
 		   "shell.el"
 		   "markdown.el"
