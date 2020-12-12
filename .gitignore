@@ -16,3 +16,7 @@
 
 # Spotlight index
 .DS_Store
+
+# CCLS and log folders created with testing lsp mode
+.ccls-cache/
+.log/

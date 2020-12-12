@@ -46,6 +46,29 @@
       '((mark modified read-only " "
 	      (name 30 30 :left :elide))))
 
+;; Syntax checker package
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode))
+
+;; templating system that expands an abbrevation to the entire template
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode 1))
+
+;; Shorten long keyboard shortcuts
+(use-package hydra :ensure t)
+
+;; Jump to visible text using character based decision tree
+(use-package avy :ensure t)
+
+;; Minibuffer minor mode to suggest autocomplete options for commands
+(use-package which-key
+  :ensure t
+  :init (which-key-mode))
+
 ;;--------------------------------
 ;; Yank and Pop helpers
 ;;--------------------------------
