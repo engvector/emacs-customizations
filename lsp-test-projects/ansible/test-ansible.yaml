@@ -1,0 +1,11 @@
+- hosts: all
+  remote_user: root
+  vars_prompt:
+    - name: timezone
+      prompt: "Your timezone (Eg., America/New_York): "
+  tasks:
+    - name: Update timezone
+      timezone:
+        name: "{{ timezone }}"
+      
+        

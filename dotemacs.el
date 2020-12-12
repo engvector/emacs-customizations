@@ -33,6 +33,9 @@
 		   "csharp.el"
 		   "org.el"
 		   "ledger.el"
+
+		   ;; Language Server Protocol(LSP) & Debug Adapter Protocol(DAP)
+		   "lsp-support.el"
 		   ))
 
 ;; Certain customizations install packages using "use-package"

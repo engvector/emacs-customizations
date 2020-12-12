@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/vinayvenkatesh/Documents/Career/Projects/emacs/personalization/my-emacs-config/lsp-test-projects/makefiles/test.cpp
+iostream
+-
+

@@ -1,0 +1,3 @@
+/Users/vinayvenkatesh/Documents/Career/Projects/emacs/personalization/my-emacs-config/lsp-test-projects/makefiles/CMakeFiles/rebuild_cache.dir
+/Users/vinayvenkatesh/Documents/Career/Projects/emacs/personalization/my-emacs-config/lsp-test-projects/makefiles/CMakeFiles/edit_cache.dir
+/Users/vinayvenkatesh/Documents/Career/Projects/emacs/personalization/my-emacs-config/lsp-test-projects/makefiles/CMakeFiles/test.dir
