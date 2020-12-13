@@ -36,6 +36,7 @@
 
 		   ;; Language Server Protocol(LSP) & Debug Adapter Protocol(DAP)
 		   "lsp-support.el"
+		   "dap-support.el"
 		   ))
 
 ;; Certain customizations install packages using "use-package"
