@@ -1,18 +1,22 @@
-;;--------------------------------------
-;; This file loads specific emacs configuration/customization files.
-;;--------------------------------------
+;;; package -- My Emacs customizations
+
+;;; Commentary:
+;;; This file loads specific Emacs configuration/customization files.
+
+;;; Code:
 
 ;; Helper function. Accepts a list of files and loads them using a base path
 (defun load-files (base-path files)
+  "Load a list of FILES under the BASE-PATH."
   (mapcar (lambda (file) (load-file (concat base-path file)))
 	  files))
 
 ;; The base path from where all customization files should be loaded
-(setq settings-root-path "~/.emacs.d/customize/")
-(setq code-test-root-path "./customize/")
+(defvar settings-root-path "~/.emacs.d/customize/" "Location of all my Emacs customization files.")
+(defvar code-test-root-path "./customize/" "Relative path to all my Emacs customization files.")
 
 ;; The files list
-(setq files-list '(
+(defvar files-list '(
 		   ;; Basic customizations
 		   "secure-pkg-source.el" ;; https for package installation
 		   "global-settings.el"
@@ -37,7 +41,8 @@
 		   ;; Language Server Protocol(LSP) & Debug Adapter Protocol(DAP)
 		   "lsp-support.el"
 		   "dap-support.el"
-		   ))
+		   )
+  "List of files containing my Emacs customizations.")
 
 ;; Certain customizations install packages using "use-package"
 (package-install 'use-package)
@@ -127,3 +132,5 @@
  '(org-special-keyword ((t (:inherit org-drawer :weight bold))))
  '(region ((t (:inherit highlight :background "gray70"))))
  '(variable-pitch ((t (:weight light :family "Arial" :height 1.2)))))
+
+;;; init.el ends here
