@@ -62,13 +62,26 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-custom-commands
    '(("A" "Agenda and all TODOs"
-      ((agenda "" nil)
+      ((agenda ""
+	       ((org-agenda-span 'day)))
        (alltodo ""
-		((org-agenda-overriding-header "=* INBOX *=")
+		((org-agenda-overriding-header "=*= INBOX =*=")
 		 (org-agenda-files
-		  '("~/Documents/todo/inbox.org"))))
-       (alltodo "" nil))
-      nil)))
+		  '("/Users/vinay/Documents/My Drive/Work/inbox.org"))))
+       (todo "STARTED"
+	     ((org-agenda-overriding-header "=*= STARTED =*=")))
+       (todo "WAITING"
+	     ((org-agenda-overriding-header "=*= WAITING FOR =*=")))
+       (todo "NEXT"
+	     ((org-agenda-overriding-header "=*= NEXT ACTIONS =*=")))
+       (alltodo ""
+		((org-agenda-overriding-header "=*= OPEN TASKS =*=")
+		 (org-agenda-sorting-strategy
+		  '(todo-state-up)))))
+      nil)
+     ("w" "Tasks I am waiting for"
+      ((todo "WAITING" nil))
+      nil nil)))
  '(org-capture-templates
    '(("g" "Capture a GOAL" entry
       (file "~/Documents/todo/goals.org")
