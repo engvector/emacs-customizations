@@ -52,11 +52,14 @@
   :init
   (global-flycheck-mode))
 
-;; templating system that expands an abbrevation to the entire template
+;; Snippets templating package.
 (use-package yasnippet
   :ensure t
   :init
   (yas-global-mode 1))
+
+;; Database of snippets for all programming languages
+(use-package yasnippet-snippets :ensure t)
 
 ;; Shorten long keyboard shortcuts
 (use-package hydra :ensure t)
