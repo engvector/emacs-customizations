@@ -12,7 +12,7 @@
 	  files))
 
 ;; The base path from where all customization files should be loaded
-(defvar settings-root-path "~/.emacs.d/customize/" "Location of all my Emacs customization files.")
+(defvar settings-root-path "~/.emacs.d/emacs-customizations/customize/" "Location of all my Emacs customization files.")
 (defvar code-test-root-path "./customize/" "Relative path to all my Emacs customization files.")
 
 ;; The files list
@@ -48,7 +48,7 @@
 (package-install 'use-package)
 
 ;; Load all customizations
-(load-files code-test-root-path files-list)
+(load-files settings-root-path files-list)
 
 ;;--------------------------------------
 ;; Emacs customizations filled using
