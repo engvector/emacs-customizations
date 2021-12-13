@@ -25,7 +25,7 @@
   (setq org-use-speed-commands 1)
   (setq org-agenda-start-with-clockreport-mode t)
   (setq org-agenda-clockreport-parameter-plist
-        (quote (:link t :maxlevel 8 :compact t)))
+        (quote (:link t :maxlevel 8 :compact t :stepskip0 t :fileskip0 t)))
   (setq org-clock-into-drawer "CLOCKING")
   (setq org-agenda-archives-mode t)
   (setq org-log-done t)
